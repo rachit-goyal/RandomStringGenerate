@@ -37,6 +37,7 @@ created by Rachit on 4/7/2025.
 fun RandomStringScreen(viewModel: RandomStringViewModel) {
     val strings by viewModel.allStrings.collectAsState()
     var input by remember { mutableStateOf("") }
+    val error by viewModel.errorMessage.collectAsState()
 
     Column(modifier = Modifier
         .padding(16.dp)
@@ -62,6 +63,15 @@ fun RandomStringScreen(viewModel: RandomStringViewModel) {
                 .weight(1f)
                 .fillMaxWidth()
         ) {
+            item {
+                error?.let {
+                    Text(
+                        text = it,
+                        color = Color.Red,
+                        modifier = Modifier.padding(bottom = 8.dp)
+                    )
+                }
+            }
             items(strings) { item ->
                 Card(
                     modifier = Modifier

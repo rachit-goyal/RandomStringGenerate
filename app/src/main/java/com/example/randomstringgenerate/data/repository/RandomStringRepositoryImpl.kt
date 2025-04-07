@@ -18,9 +18,14 @@ class RandomStringRepositoryImpl @Inject constructor(
 
     override fun getAll(): Flow<List<RandomString>> = dao.getAll()
 
-    override suspend fun generateAndSave(length: Int) {
+    override suspend fun generateAndSave(length: Int):Boolean {
         val result = ContentProviderHelper.fetchRandomString(context, length)
-        result?.let { dao.insert(it) }
+        return if (result != null) {
+            dao.insert(result)
+            false
+        } else {
+            false
+        }
     }
 
     override suspend fun deleteAll() = dao.deleteAll()
