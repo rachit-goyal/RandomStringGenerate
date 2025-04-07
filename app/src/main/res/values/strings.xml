@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RandomStringGenerate</string>
+    <string name="clear_all">Clear All</string>
+    <string name="delete">Delete</string>
+    <string name="generate">Generate</string>
+    <string name="length">Length</string>
+    <string name="created">Created: %1$s</string>
+    <string name="string">String: %1$s</string>
+</resources>
