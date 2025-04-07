@@ -1,1 +1,1 @@
-# An app which generate a random string using content provider
+# An app which generate a random string on the basis of length provided using content provider
