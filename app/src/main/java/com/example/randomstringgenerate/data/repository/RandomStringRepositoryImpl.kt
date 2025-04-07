@@ -22,7 +22,7 @@ class RandomStringRepositoryImpl @Inject constructor(
         val result = ContentProviderHelper.fetchRandomString(context, length)
         return if (result != null) {
             dao.insert(result)
-            false
+            true
         } else {
             false
         }
