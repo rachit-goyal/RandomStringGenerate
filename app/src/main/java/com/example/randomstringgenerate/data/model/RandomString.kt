@@ -8,7 +8,7 @@ created by Rachit on 4/7/2025.
 @Entity(tableName = "random_strings")
 data class RandomString(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    val id: Int = 0,
     val value: String,
     val length: Int,
     val created: String
